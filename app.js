@@ -30,8 +30,6 @@ form.addEventListener('submit',(e)=>{
         form.name.value='';
        // window.setTimeout(location.reload(),1000);
        setTimeout("location.reload(true);", 1000);
-
-
     }
    
 })
