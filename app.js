@@ -26,11 +26,10 @@ db.collection('textme').get().then((snapshot)=>{
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
    if(form.name.value!==''){  
-        console.log(form.name.value!='');
         db.collection('textme').add({text:form.name.value});
         form.name.value='';
        // window.setTimeout(location.reload(),1000);
-        
+       setTimeout("location.reload(true);", 1000);
 
 
     }
