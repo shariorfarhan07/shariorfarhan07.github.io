@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <style>
+       *{
+           padding: 0;
+           margin: 0;
+           box-sizing: border-box;
+           text-align: center;
+        
+
+       }
+
+       body{
+            height: 100vh;
+            color: #ffffff;
+        }
+
+       .wrap{
+       
+       background-color:#ffffff;
+       display: flex;            
+       width: 800px;
+       margin: 200px auto;
+     
+       
+   }
+   .cart{
+           height: 300px;
+           width: 200px;
+           margin: 10px 10px;
+       }
+
+       
+    .para{
+        padding: 10px 10px ;
+        border-radius: 5px;
+        border: 2px solid #E4E4E4;
+        color: #000000d2;
+    }
+    .text{
+        background-color: #F4394E;
+        padding: 10px 0;
+    }
+
+    span{
+        
+        padding: 10px 0px;
+        font-size: 30px;
+      
+    }
+    .s1{
+        width: 70%;
+    }
+    .s2{
+        width: 30%; 
+    }
+    div{
+       margin: 15px 0;
+    }
+    #id1 .s1{
+      background-color: aqua;
+    }
+    </style>
+<div class="wrap">
+
+
+<div class="cart">
+    <div id="id1" class="text" >
+        <span class="s1">column 1</span>
+        <span class="s2"><i class="fab fa-facebook-square"></i></span>
+    </div>
+
+    <div class="para">
+        <p >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur condimentum felis, vel feugiat nisl suscipit sit amet. Integer eros enim, aliquam vehicula consequat quis, suscipit quis mi. Phasellus ultrices.
+        </p>
+    </div>
+</div>
+
+
+<div class="cart">
+    <div class="text">
+        <span class="s1">column 1</span>
+        <span class="s2"><i class="fab fa-facebook-square"></i></span>
+    </div>
+
+    <div class="para">
+        <p >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur condimentum felis, vel feugiat nisl suscipit sit amet. Integer eros enim, aliquam vehicula consequat quis, suscipit quis mi. Phasellus ultrices.
+        </p>
+    </div>
+</div>
+
+<div class="cart">
+    <div class="text">
+        <span class="s1">column 1</span>
+        <span class="s2"><i class="fab fa-facebook-square"></i></span>
+    </div>
+
+    <div class="para">
+        <p >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur condimentum felis, vel feugiat nisl suscipit sit amet. Integer eros enim, aliquam vehicula consequat quis, suscipit quis mi. Phasellus ultrices.
+        </p>
+    </div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
