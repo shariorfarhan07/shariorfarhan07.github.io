@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nav bar</title>
+  </head>
+  <style>
+    * {
+      padding: 0 0;
+      margin: 0 0;
+    }
+    .container .nav {
+      position: relative;
+    }
+    ul {
+      position: absolute;
+      display: flex;
+      right: 0px;
+    }
+    ul > li {
+      list-style-type: none;
+      padding: 10px 10px;
+    }
+    ul > li:hover {
+      border: #de814b solid 5px;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      transition: all 0.7s ease-in-out;
+      color: #de814b;
+    }
+    ul > li > a {
+      text-decoration: none;
+      font-size: 30px;
+      color: #fff;
+    }
+    ul > li :hover {
+      transition: all 0.7s ease-in-out;
+      color: #de814b;
+    }
+    .nav {
+      display: flex;
+    }
+    .logo {
+      font-size: 35px;
+      color: #fff;
+      padding: 10px 10px;
+    }
+    .container {
+      padding: 0 100px;
+      background-color: #292929;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="logo">First nav</div>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Web template</a></li>
+          <li><a href="">Video</a></li>
+          <li><a href="">Portfolio</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
