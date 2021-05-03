@@ -68,6 +68,7 @@ img{
 }
 article{
     display: flex;
+    margin: 50px 20px;
 }
 .article_wrap{
     width: 700px;
@@ -78,7 +79,7 @@ article{
     background-color: #E5E5E5;
 }
 .articleimage{
-    width: 300px;
+    
     margin-right: 50px;
     padding: 10px 0;
 }
@@ -129,4 +130,9 @@ aside p,h2{
 }
 span{
     color:orange;
+}
+.readmore{
+    margin: 5px 0;
+    text-decoration: none;
+    color: orange;
 }
