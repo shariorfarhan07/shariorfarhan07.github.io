@@ -1,0 +1,174 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container_full{
+    width: 100%;
+
+    box-shadow: 0 -2px 19px -4px black;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+nav > ul{
+    position: relative;
+    left: 60%;
+}
+nav >ul > li{
+    list-style: none;
+    display: inline-block;
+}
+nav >ul > li > a{
+    display: block;
+    padding: 18px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 200;
+   
+    align-items: center;
+    border-bottom: 3px solid transparent; 
+    color: rgb(129, 129, 129);
+
+
+}
+nav >ul > li > a:hover{
+    border-bottom: 3px solid cornflowerblue; 
+    transition: width 2s; 
+    color: cornflowerblue;
+
+}
+
+.container_bg{
+background-color: #fff;
+}
+
+nav> div{
+
+    color: black;
+    padding: 10px 0px;
+    font-size: 25px;
+    font-weight: 800;
+    
+}
+
+nav{
+    display: flex;
+   
+}
+nav>div>span{
+    color: cornflowerblue;
+    font-size: 35px;
+    font-weight: bold;
+    
+
+}
+
+.container_body >.container{
+     padding: 10px;
+}
+
+.container_body >.container>h1{
+  text-align: center;
+ 
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 40px;
+  
+}
+.aclass{
+    color: #3D526D;
+}
+.bclass{
+    color: #5D99FF;
+}
+.img{
+    width: 500px;
+   margin: 0 auto;
+}
+.img >img{
+    width: 100%;
+}
+p{
+    text-align: center;
+    color: #888B9D;
+    padding: 10px 5px;
+}
+.writing{
+    display: flex;
+    width: 775px;
+    margin: 0 auto;
+}
+.container1{
+    width: 50%;
+    padding: 10px 5px;
+}
+.container1 h1{
+    color: #575A89;
+    font-weight: 900;
+    font-size: 50px;
+}
+.container1 .k{
+    color: crimson;
+    font-size: 50px;
+    font-weight: 900;
+    text-align: right;
+}
+.container1 p{
+    text-align: right;
+}
+.cards{
+    display: flex;
+    width: 1000px;
+}
+.card{
+    height: 450px;
+    width: 300px;
+    padding: 15px 15px;
+    margin: 0 auto;
+    border-radius: 5px;
+  
+    align-items: center;
+}
+.card img{
+width: 90%;
+height: 260px;
+object-fit: cover;
+}
+.card h2{
+    color: #3D526D;
+    text-align: center;
+}
+.cardimg{
+    width: 300px;
+    height: 300px;
+}
+section{
+    padding:15px 0px ;
+}
+#c1{
+    background-color: #FDEBED;
+}
+#c2{
+    background-color: #EBF9F4;
+}
+#c3{
+    background-color: #FDB8C0C4;
+}
+.footer{
+    box-shadow: 0 6px 19px -4px black;
+    margin-top: 60px;
+}
+.footer>.container{
+    width: 1000px;
+    color: #656566;
+    text-align: left;
+    padding: 15px 0px;
+}
+.footer > .container >p{
+    width: 300px;
+    color: #656566;
+    text-align: left;
+    
+}
