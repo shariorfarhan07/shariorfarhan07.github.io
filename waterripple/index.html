@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery WebGL Ripples</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; }
+html {
+	height: 100%;
+}
+main {
+	color: #fff;
+	font-size: 16px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	background-image: url(image/1.jpg);
+	background-size: cover;
+	background-position: 50% 0;
+	height: 100%;
+	text-align: center;
+    height: 100vh;
+}
+
+.frontimage>img{
+    width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+code { font-size: 0.8em; display: inline; }
+
+.disable {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+.code-string { color:#ec7600 }
+.code-cbracket { font-weight:bold }
+.code-number { color:#ffcd22 }
+.layer {
+    background-color: rgba(0, 0, 0, 0.26);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+.frontimage{
+    display: inline-block;
+    position: absolute;
+    top: 40vh;
+    width: 100%;
+    text-align: center;
+  
+}
+
+</style>
+</head>
+<body>
+
+    <main>
+        <div class="layer"></div>
+
+    </main>
+<div class="frontimage">
+    <img src="https://scontent.fdac14-1.fna.fbcdn.net/v/t1.6435-9/66277249_394182121445470_6695498584445419520_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=174925&_nc_eui2=AeGWenda17TpQhHJFumtAH12_-62w7I_50H_7rbDsj_nQdUsG2q1R16QVmBnWOGCIpfH19dzZt9ZZgwN0Vz1imes&_nc_ohc=q_DMrKpOt4IAX8NgV7A&_nc_oc=AQnUhYtoWNMrDHYSNJeXNMQ-8AlS6hIfVcJ-tDt0IDtX2lVTZfXiJzZ-YMkvDypBtg4&_nc_ht=scontent.fdac14-1.fna&oh=238f96445ca96ded894b63b994cbf348&oe=60F4178A" alt="">
+                         <h1>Sharior Hossain Farhan</h1>
+</div>
+
+
+
+
+
+
+<button class="js-ripples-disable disable">
+	Click here if your PC can't handle this effect very well
+	(<code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"destroy"</span>)</code>)
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="error"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="jquery.ripples-master/dist/jquery.ripples.js"></script>
+<script>
+$(document).ready(function() {
+	try {
+		// $('body').ripples({
+		// 	resolution: 500,
+		// 	dropRadius: 20, //px
+		// 	perturbance: 0.04,
+            
+		// });
+		$('main').ripples({
+			resolution: 500,
+			dropRadius: 20, //px
+			perturbance: 0.05,
+			interactive: true,
+            waterbody:0.04
+
+		});
+	}
+	catch (e) {
+		$('.error').show().text(e);
+	}
+
+
+
+	// // Automatic drops
+	// setInterval(function() {
+	// 	var $el = $('main');
+	// 	var x = Math.random() * $el.outerWidth();
+	// 	var y = Math.random() * $el.outerHeight();
+	// 	var dropRadius = 10;
+	// 	var strength = 0.04 + Math.random() * 0.04;
+    
+	// 	$el.ripples('drop', x, y, dropRadius, strength);
+	// }, 4000);
+});
+</script>
+</body>
+</html>
