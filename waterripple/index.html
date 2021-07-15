@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <style>
 * { margin: 0; padding: 0; }
 html {
@@ -15,6 +16,8 @@ main {
 	font-size: 16px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	background-image: url(image/1.jpg);
+	background-image: url(https://images.unsplash.com/photo-1478435896829-1dc5d2a3d9b9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80);
+	background-image: url(https://images.unsplash.com/photo-1526402978125-f1d6df91cbac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1236&q=80);
 	background-size: cover;
 	background-position: 50% 0;
 	height: 100%;
@@ -45,6 +48,20 @@ code { font-size: 0.8em; display: inline; }
 .code-string { color:#ec7600 }
 .code-cbracket { font-weight:bold }
 .code-number { color:#ffcd22 }
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
 .layer {
     background-color: rgba(0, 0, 0, 0.26);
     position: absolute;
@@ -54,17 +71,32 @@ code { font-size: 0.8em; display: inline; }
     height: 100%;
 }
 
-h1{
+h1, h4,h5{
     font-family: 'Montserrat', sans-serif;
     color: #fff;
 }
+
 .frontimage{
     display: inline-block;
     position: absolute;
     top: 40vh;
-    width: 100%;
+    width: 90%;
     text-align: center;
+	margin: 0;
   
+}
+.seemore>i{
+	color: #fff;	
+}
+.seemore{
+	padding-top: 100px;
+	font-size: 1.3em;
+}
+.seemore:hover{
+	padding-top: 100px;
+	font-size: 1.3em;
+	animation: shake 0.5s;
+	animation-iteration-count: infinite;
 }
 
 </style>
@@ -78,6 +110,13 @@ h1{
 <div class="frontimage">
     <img src="https://scontent.fdac14-1.fna.fbcdn.net/v/t1.6435-9/66277249_394182121445470_6695498584445419520_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=174925&_nc_eui2=AeGWenda17TpQhHJFumtAH12_-62w7I_50H_7rbDsj_nQdUsG2q1R16QVmBnWOGCIpfH19dzZt9ZZgwN0Vz1imes&_nc_ohc=q_DMrKpOt4IAX8NgV7A&_nc_oc=AQnUhYtoWNMrDHYSNJeXNMQ-8AlS6hIfVcJ-tDt0IDtX2lVTZfXiJzZ-YMkvDypBtg4&_nc_ht=scontent.fdac14-1.fna&oh=238f96445ca96ded894b63b994cbf348&oe=60F4178A" alt="">
                          <h1>Sharior Hossain Farhan</h1>
+					<h4>Programmer . Webdeveloper . Designer</h4>
+					      <div class="seemore">
+							<h5> See details</h5>
+							<i class="fas fa-chevron-down"></i>
+
+						  </div>    
+					    
 </div>
 
 
