@@ -1,0 +1,211 @@
+/*
+=====
+DEPENDENCES
+=====
+*/
+
+.media-placeholder {
+    position: var(--mediaPlaceholderPosition, relative) !important;
+}
+
+.media-placeholder::before {
+    content: "" !important;
+    display: block !important;
+    padding-top: var(--mediaPlaceholderRatio) !important;
+    background-color: var(--mediaPlaceholderBgColor) !important;
+}
+
+.media-placeholder__media {
+    position: var(--mediaPlaceholderMediaPosition, absolute) !important;
+    top: var(--mediaPlaceholderMediaTop, 0) !important;
+    left: var(--mediaPlaceholderMediaLeft, 0) !important;
+    max-width: var(--mediaPlaceholderMediaMaxWidth, 100%) !important;
+}
+
+/*
+=====
+CORE STYLES
+=====
+*/
+
+.photobox {
+    --mediaPlaceholderRatio: var(--photoboxPlaceholderRatio, 50%);
+
+    display: var(--photoboxDisplay, inline-flex);
+    position: var(--photoboxPosition, relative);
+}
+
+.photobox__previewbox {
+    overflow: hidden;
+    width: 100%;
+    will-change: transform;
+}
+
+.photobox__previewbox::after {
+    content: "";
+    width: var(--photoboxOverlayWidth, 100%);
+    height: var(--photoboxOverlayHeight, 100%);
+    background-color: var(--photoboxOverlayBackgroundColor, rgba(0, 0, 0, .8));
+
+    position: absolute;
+    top: var(--photoboxOverlayTop, 0);
+    left: var(--photoboxOverlayLeft, 0);
+    z-index: var(--photoboxOverlayZindex, 2);
+}
+
+.photobox__info-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: .25rem;
+
+    display: flex;
+
+    opacity: 0;
+    transition: opacity .2s ease-out;
+    will-change: opacity;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: var(--photoboxInfoZindex, 2);
+}
+
+.photobox__info {
+    margin: auto;
+}
+
+.photobox:hover .photobox__info-wrapper {
+    opacity: 1;
+    transition-delay: .3s;
+}
+
+/*
+flat mask
+*/
+
+.photobox_flat .photobox__previewbox::after {
+    opacity: 0;
+    transition: opacity .4s cubic-bezier(0.71, 0.05, 0.29, 0.9);
+    will-change: opacity;
+}
+
+.photobox_flat:hover .photobox__previewbox::after {
+    opacity: 1;
+}
+
+/*
+rounded mask
+*/
+
+.photobox_rounded {
+    --photoboxOverlayWidth: 0;
+    --photoboxOverlayHeight: 0;
+    --photoboxOverlayTop: 50%;
+    --photoboxOverlayLeft: 50%;
+}
+
+.photobox_rounded .photobox__previewbox::after {
+    padding: 45%;
+    border-radius: 50%;
+}
+
+.photobox_rounded .photobox__previewbox::after {
+    transition: transform .25s ease;
+    will-change: transform;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.photobox_rounded:hover .photobox__previewbox::after {
+    transform: translate(-50%, -50%) scale(2);
+    transition-duration: .8s;
+}
+
+/*
+triangular mask
+*/
+
+.photobox_triangular .photobox__previewbox::after {
+    opacity: 0;
+    clip-path: polygon(0 100%, 50% 0, 50% 0, 100% 100%);
+    transition: clip-path .1s ease-out, opacity .1s ease-out;
+    will-change: clip-path;
+}
+
+.photobox_triangular:hover .photobox__previewbox::after {
+    opacity: 1;
+    transition-duration: .4s;
+    clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
+}
+
+/*
+scale-slipping animation
+*/
+
+.photobox_scale-sliding .photobox__preview {
+    transition: transform .4s cubic-bezier(0.71, 0.05, 0.29, 0.9);
+    transform: scale(1) translate(0, 0);
+}
+
+.photobox_scale-sliding:hover .photobox__preview {
+    transform: scale(1.2) translate(4%, 4%);
+}
+
+/*
+scale animation
+*/
+
+.photobox_scaled .photobox__preview {
+    transition: transform .4s cubic-bezier(0.71, 0.05, 0.29, 0.9);
+    transform: scale(1);
+}
+
+.photobox_scaled:hover .photobox__preview {
+    transform: scale(1.2);
+}
+
+/* 
+scale-rotate animation
+*/
+
+.photobox_scale-rotated .photobox__preview {
+    transition: transform .4s cubic-bezier(0.71, 0.05, 0.29, 0.9);
+    transform: scale(1) rotate(0);
+}
+
+.photobox_scale-rotated:hover .photobox__preview {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/*
+=====
+SETTINGS
+=====
+*/
+
+:root {
+    --photoboxPlaceholderRatio: 66.56%;
+    --photoboxOverlayBackgroundColor: rgba(72, 27, 174, .7);
+}
+
+/*
+=====
+DEMO
+=====
+*/
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+    margin: 0;
+}
+
+.page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+}
+
+.photobox {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
