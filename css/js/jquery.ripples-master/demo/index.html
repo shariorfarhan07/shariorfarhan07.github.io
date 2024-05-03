@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery WebGL Ripples</title>
+<style>
+* { margin: 0; padding: 0; }
+html {
+	height: 100%;
+}
+body {
+	color: #fff;
+	font-size: 16px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	background-image: url(img/bg2.jpg);
+	background-size: cover;
+	background-position: 50% 0;
+	height: 100%;
+	text-align: center;
+}
+
+body:before {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+
+main {
+	display: inline-block;
+	vertical-align: middle;
+	background: url(img/bg.jpg);
+	padding:  100px;
+	max-width: 500px;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+	box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+h1 {
+	font-size: 32px;
+}
+h2 {
+	font-size: 18px;
+	margin-top: 6px;
+}
+p {
+	text-align: left;
+	margin-top: 20px;
+}
+a {
+	color: #ff6800;
+}
+pre {
+	text-align: left;
+	margin-top: 20px;
+}
+
+.error {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: #000;
+	color: #f00;
+	padding: 5px;
+	max-width: 50%;
+}
+
+button {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	padding: 0 0.8em;
+	line-height: 2em;
+	border: none;
+	background: #666;
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+	border-radius: 4px;
+	cursor: pointer;
+	margin-bottom: 0.5em;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+}
+
+button:hover {
+	background: #888;
+}
+
+code { font-size: 0.8em; display: inline; }
+
+.disable {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+.code-string { color:#ec7600 }
+.code-cbracket { font-weight:bold }
+.code-number { color:#ffcd22 }
+
+</style>
+</head>
+<body>
+
+<main>
+	<header>
+		<h1>jQuery Ripples</h1>
+		<h2>A simple WebGL-based ripple effect.</h2>
+	</header>
+	<p>Background images are often boring. Use this effect to make your static CSS background images more interactive!</p>
+	<p>It's as easy as:</p>
+
+	<pre><code>
+$(<span class="code-string">'body'</span>).ripples(<span class="code-cbracket">{</span>
+	resolution: <span class="code-number">512</span>,
+	dropRadius: <span class="code-number">20</span>,
+	perturbance: <span class="code-number">0.04</span>,
+<span class="code-cbracket">}</span>);
+	</code></pre>
+
+	<p>You can add drops programmatically by doing <code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"drop"</span>, x, y, radius, strength)</code></p>
+
+	<p>And you can change its state:<br>
+	<button class="js-ripples-pause" type="button">
+		<code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"pause"</span>)</code>
+	</button>
+
+	<button class="js-ripples-play" type="button">
+		<code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"play"</span>)</code>
+	</button>
+	</p>
+
+	<p>Download or fork this effect at <a href="//github.com/sirxemic/jquery.ripples/">Github</a>.</p>
+</main>
+
+<button class="js-ripples-disable disable">
+	Click here if your PC can't handle this effect very well
+	(<code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"destroy"</span>)</code>)
+</button>
+
+<div class="error"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="../dist/jquery.ripples.js"></script>
+<script>
+$(document).ready(function() {
+	try {
+		$('body').ripples({
+			resolution: 512,
+			dropRadius: 20, //px
+			perturbance: 0.04,
+		});
+		$('main').ripples({
+			resolution: 128,
+			dropRadius: 10, //px
+			perturbance: 0.04,
+			interactive: false
+		});
+	}
+	catch (e) {
+		$('.error').show().text(e);
+	}
+
+
+
+	// Automatic drops
+	setInterval(function() {
+		var $el = $('main');
+		var x = Math.random() * $el.outerWidth();
+		var y = Math.random() * $el.outerHeight();
+		var dropRadius = 20;
+		var strength = 0.04 + Math.random() * 0.04;
+
+		$el.ripples('drop', x, y, dropRadius, strength);
+	}, 400);
+});
+</script>
+</body>
+</html>
