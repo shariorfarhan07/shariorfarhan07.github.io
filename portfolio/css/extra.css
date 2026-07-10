@@ -1,0 +1,37 @@
+.achivements{
+    background-color: #F0F8FF;
+    height: 100vh;
+    width: 100%;
+}
+
+.owl-carousel{
+    /* margin-top: 5%; */
+ 
+    width: 90%;
+    
+}
+.achitem {
+height: 70vh ;
+/* width: 100%; */
+margin: 20px;
+background-color: rgba(0, 0, 0, 0.377);
+}
+.achitem > img{
+    height: 100%;
+    width: 100%; 
+    overflow: hidden;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.ach > h1{
+    text-align: center;
+    padding: 20px 0;
+}
+.navicont{
+    /* width: */
+    height: 100vh;
+    font-size: 30px;
+    background-color: aqua;
+  }

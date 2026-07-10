@@ -27,18 +27,23 @@ $(document).ready(function() {
 // });
 
 $(document).ready(function(){
-	$(".owl-carousel").owlCarousel({
-	items:1,
-    margin:0,
-    autoHeight:true,
-	autoplay: true,
-	autoPlaySpeed: 1,
-	autoPlayTimeout: 50,
-		autoplayHoverPause: false,
-		nav: true,
+	var owl = $(".owl-carousel").owlCarousel({
+		items: 1,
+		margin: 0,
+		autoHeight: true,
+		autoplay: true,
+		autoPlaySpeed: 1,
+		autoPlayTimeout: 50,
+		autoplayHoverPause: true,
+		nav: false,
 		loop: true,
-	
+	});
 
+	$(".navigatorprev").on("click", function() {
+		owl.trigger("prev.owl.carousel");
+	});
+	$(".navigatornext").on("click", function() {
+		owl.trigger("next.owl.carousel");
 	});
   });
   function notpermitted(){
